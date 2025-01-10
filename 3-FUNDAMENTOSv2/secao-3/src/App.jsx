@@ -11,6 +11,11 @@ function App() {
   const [count, setCount] = useState(0)
   const name = "Mauricio"
   const [userName] = useState("Joao");
+  const cars = [
+    {id: 1, brand: "VW", km: 100000, color: "Azul", newCar: false},
+    {id: 2, brand: "Fiat", km: 0, color: "Azul", newCar: true},
+    {id: 3, brand: "Chevrolet", km: 140, color: "Azul", newCar: false},
+  ]
 
   return (
     <>
@@ -28,7 +33,20 @@ function App() {
       {/**Props */}
       <ShowUserName name={userName}/>
       {/**Desctructuring Props */}
-      <CarDetails brand="VW" km={100000} color="Azul"/>
+      <CarDetails brand="VW" km={100000} color="Azul" newCar={false}/>
+      {/**Reaproveitando */}
+      <CarDetails brand="Ford" km={0} color="Vermelha" newCar={true}/>
+      <CarDetails brand="Fiat" km={4500} color="Branco" newCar={false}/>
+      {/**Loop em array de objetos */}
+      {cars.map((car) => (
+        <CarDetails 
+          brand={car.brand} 
+          km={car.km} 
+          color={car.color} 
+          newCar={car.newCar} 
+          key={car.id}/>
+      ))}
+      
     </>
   )
 }
