@@ -1,0 +1,16 @@
+import './App.css'
+import MyForm from './components/MyForm'
+
+function App() {
+
+  return (
+    <>
+      <div>
+        <h1>Formularios</h1>
+        <MyForm user={{name:"Josias", email:"josias@gmail.com", biography:"Eu sou advogado", role:"editor"}}/>
+      </div>
+    </>
+  )
+}
+
+export default App
